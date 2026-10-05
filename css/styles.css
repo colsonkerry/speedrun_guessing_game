@@ -1,0 +1,54 @@
+body {
+    background-color: grey;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 48px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.option {
+    flex: 1;
+    padding: 20px;
+    background-color: rgb(117, 117, 117);
+}
+
+.game-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+    padding: 12px 24px;
+
+    background-color: rgb(90, 89, 89);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.button-art {
+    width: 400px;
+    object-fit: contain;
+}
+
+/* @media (mad-width: 1200px) {
+    .container {
+        flex-direction: column;
+    }
+} */

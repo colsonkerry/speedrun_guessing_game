@@ -26,30 +26,39 @@
                 </button>
             </div>
         </div> -->
+        <div class="container">
+            <div class="cards">
+                <article class="card">
+                    <header>
+                        <!-- <h3>Game #1</h3> -->
+                    </header>
+                    <button class="game-option" id="left-button">
+                        <img id="left-button-image" class="button-image" src="images/elden_ring.png" alt="Game Selection">
+                        <span id="left-button-text" class="button-text">Elden Ring</span>
+                        <span id="left-game-time" class="game-time" class="game-time hidden">3105 seconds</span>
+                    </button>
+                </article>
 
-        <div class="cards">
-            <article class="card">
-                <header>
-                    <h2>Game #1</h2>
-                </header>
-                <button class="game-option" id="left-button">
-                    <img id="left-button-image" class="button-image" src="images/elden_ring.png" alt="Game Selection">
-                    <span id="left-button-text" class="button-text">Elden Ring</span>
-                    <span id="left-game-time" class="game-time">3105 seconds</span>
-                </button>
-            </article>
-
-            <article class="card">
-                <header>
-                    <h2>Game #2</h2>
-                </header>
-                <button class="game-option" id="right-button">
-                    <img id="right-button-image" class="button-image" src="images/dark_souls_iii.png" alt="Game Selection">
-                    <span id="right-button-text" class="button-text">Dark Souls III</span>
-                    <span id="right-game-time" class="game-time">1482 seconds</span>
-                </button>
-            </article>
+                <article class="card">
+                    <header>
+                        <!-- <h3>Game #2</h3> -->
+                    </header>
+                    <button class="game-option" id="right-button">
+                        <img id="right-button-image" class="button-image" src="images/dark_souls_iii.png" alt="Game Selection">
+                        <span id="right-button-text" class="button-text">Dark Souls III</span>
+                        <span id="right-game-time" class="game-time" class="game-time hidden">1482 seconds</span>
+                    </button>
+                </article>
+            </div>
         </div>
+
+        <div class="result">
+            <h2 id="correct-or-incorrect"></h2>;
+        </div>
+        <div class="next">
+            <button id="next-button" class="button-30 hidden" role="button">Next</button>
+        </div>
+        
 
         <script src ="js/main.js"></script>
 

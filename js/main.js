@@ -1,6 +1,7 @@
 
 const leftButton = document.getElementById("left-button");
 const rightButton = document.getElementById("right-button");
+const nextButton = document.getElementById("next-button");
 
 const games = [{name: "Elden Ring", image: "images/elden_ring.png", time: 3105}, 
     {name: "Dark Souls III", image: "images/dark_souls_iii.png", time: 1482},
@@ -11,36 +12,73 @@ const games = [{name: "Elden Ring", image: "images/elden_ring.png", time: 3105},
     {name: "Hollow Knight", image: "images/hollow_knight.png", time: 1845},
 ];
 
+var waitingForNext = false;
+var leftGameIndex;
+var rightGameIndex;
+var currentGameTimes;
 
-var leftGameIndex = 0;
-var rightGameIndex = 1;
+// Initial shuffle and hide next button
+changeGames();
+toggleTimeVisibility();
 
 var leftGame = games[leftGameIndex];
 var rightGame = games[rightGameIndex];
 
 leftButton.addEventListener("click", function() {
-    if (leftGame.time < rightGame.time) {
-        alert("Correct! "  + leftGame.time + " " +rightGame.time);
-    } else {
-        alert("Incorrect! "  + leftGame.time + " " +rightGame.time);
-    }
-
-    changeGames();
-
-    //reveal time text()
-    // await waitForInput();
-
+    checkAnswer(leftButton);
 });
 
 rightButton.addEventListener("click", function() {
-    if (leftGame.time > rightGame.time) {
-        alert("Correct! "  + leftGame.time + " " +rightGame.time);
-    } else {
-        alert("Incorrect! "  + leftGame.time + " " +rightGame.time);
-    }
-
-    changeGames();
+    checkAnswer(rightButton);
 });
+
+nextButton.addEventListener("click", function() {
+    waitingForNext = false;
+    toggleNextVisibility();
+    toggleTimeVisibility();
+    changeGames();
+    document.getElementById("correct-or-incorrect").innerText = ""
+});
+
+function checkAnswer(button) {
+    if (button == leftButton) {
+        if (leftGame.time < rightGame.time) {
+            document.getElementById("correct-or-incorrect").innerText = "Correct!"
+        } else {
+            document.getElementById("correct-or-incorrect").innerText = "Incorrect!"
+        }
+    } else {
+        if (leftGame.time > rightGame.time) {
+            document.getElementById("correct-or-incorrect").innerText = "Correct!"
+        } else {
+            document.getElementById("correct-or-incorrect").innerText = "Incorrect!"
+        }
+    }
+    toggleNextVisibility();
+    toggleTimeVisibility();
+    waitingForNext = true;
+    
+}
+
+function toggleNextVisibility() {
+    document.getElementById("next-button").classList.toggle("hidden");
+
+    // if (document.getElementsByClassName("next-button").style.visibility == "hidden") {
+    //     document.getElementsByClassName("next-button").style.visibility = "visible";
+    // } else {
+    //     document.getElementById("next-button").style.visibility = "hidden"
+    // }
+}
+
+function toggleTimeVisibility() {
+    document.querySelectorAll(".game-time").forEach(el => el.classList.toggle("hidden"));
+    //  currentGameTimes.forEach(toggle("hidden"));
+//     if (document.getElementByClass("game-time").style.visibility == "hidden") {
+//         document.getElementByClass("game-time").style.visibility = "visible";
+//     } else {
+//         document.getElementByClass("game-time").style.visibility = "hidden"
+//     }
+}
 
 function changeGames() {
     leftGameIndex = Math.floor(Math.random() * 6);
@@ -54,18 +92,6 @@ function changeGames() {
 
     updateCards(leftGame, rightGame);
 };
-
-function waitForInput() {
-    return new Promise((resolve) => {
-        function handleKey(input) {
-            if (event.code === 'Space') {
-                window.removeEventListener('keydown', handleKey);
-                resolve();
-            }
-        }
-        window.addEventListener('keydown', handleKey);
-    })
-}
 
 function updateCards(leftGame, rightGame) {
     document.getElementById("left-button-image").src = leftGame.image;

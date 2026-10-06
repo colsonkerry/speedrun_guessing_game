@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap");
+
+:root {
+    --navy: #10122f;
+    --cream: #ffeee3;
+    --tag-pink: #fff0fb;
+    --font-sans: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "Space Mono", "JetBrains Mono", monospace;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0 16px 48px;
+    background-color: var(--cream);
+    background-image: radial-gradient(rgba(16, 18, 47, 0.35) 1px, transparent 1.5px);
+    background-size: 24px 24px;
+    color: var(--navy);
+    font-family: var(--font-sans);
+}
+
+h1 {
+    font-size: 48px;
+    text-align: center;
+    color: var(--navy);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 28px;
+    text-align: center;
+    color: var(--navy);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: 30px;
+    text-align: center;
+    color: var(--navy);
+    line-height: 1.2;
+}
+
+/* ---------- Layout ---------- */
+
+.cards {
+    max-width: 900px;
+    margin: 1em auto;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-gap: 28px;
+}
+
+/* Two columns at 700px or wider, one column below that */
+@media screen and (min-width: 700px) {
+    .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* ---------- Cards ---------- */
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid var(--navy);
+    border-radius: 0;
+
+    display: grid;
+    grid-template-rows: max-content auto 1fr;
+
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Card lifts up and right, revealing the hard navy shadow behind it */
+.card:hover,
+.card:focus-within {
+    transform: translate(6px, -6px);
+    box-shadow: -8px 8px 0 var(--navy);
+}
+
+.game-option {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+    padding: 20px 24px;
+
+    background-color: transparent;
+    border: none;
+    color: var(--navy);
+    font-family: var(--font-sans);
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.game-option:focus-visible {
+    outline: 3px solid var(--navy);
+    outline-offset: -6px;
+}
+
+.button-image {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: contain;
+}
+
+/* Time shows up like the little pastel tag on the reference cards */
+.game-time {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 20px;
+    background-color: var(--tag-pink);
+    color: var(--navy);
+    padding: 4px 12px;
+}
+
+/* ---------- Result text ---------- */
+
+.result h2 {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    min-height: 1.2em;
+}
+
+/* ---------- Next button ---------- */
+
+.next {
+    text-align: center;
+}
+
+.button-30 {
+    align-items: center;
+    appearance: none;
+    background-color: #ffffff;
+    border: 1px solid var(--navy);
+    border-radius: 0;
+    box-shadow: -4px 4px 0 var(--navy);
+    color: var(--navy);
+    cursor: pointer;
+    display: inline-flex;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 18px;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    padding-left: 28px;
+    padding-right: 28px;
+    text-decoration: none;
+    transition: box-shadow 0.15s ease, transform 0.15s ease, background-color 0.15s ease;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+}
+
+.button-30:hover {
+    background-color: var(--tag-pink);
+    box-shadow: -7px 7px 0 var(--navy);
+    transform: translate(3px, -3px);
+}
+
+.button-30:focus-visible {
+    outline: 3px solid var(--navy);
+    outline-offset: 3px;
+}
+
+.button-30:active {
+    box-shadow: 0 0 0 var(--navy);
+    transform: translate(-4px, 4px);
+}
+
+/* ---------- Utility ---------- */
+
+.hidden {
+    visibility: hidden;
+}

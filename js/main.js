@@ -1,9 +1,10 @@
+import data from '../data/games.json' with { type: 'json' };
 
 const leftButton = document.getElementById("left-button");
 const rightButton = document.getElementById("right-button");
 const nextButton = document.getElementById("next-button");
 
-const games = [{name: "Elden Ring", image: "images/elden_ring.png", time: 3105}, 
+const games = [{name: data[0].name, image: "images/elden_ring.png", time: data[0].time}, 
     {name: "Dark Souls III", image: "images/dark_souls_iii.png", time: 1482},
     {name: "Borderlands 2", image: "images/borderlands_2.png", time: 6569},
     {name: "Grand Theft Auto V", image: "images/grand_theft_auto_v.png", time: 20214},

@@ -4,13 +4,20 @@ const leftButton = document.getElementById("left-button");
 const rightButton = document.getElementById("right-button");
 const nextButton = document.getElementById("next-button");
 
-const games = [{name: data[0].name, image: "images/elden_ring.png", time: data[0].time}, 
-    {name: "Dark Souls III", image: "images/dark_souls_iii.png", time: 1482},
-    {name: "Borderlands 2", image: "images/borderlands_2.png", time: 6569},
-    {name: "Grand Theft Auto V", image: "images/grand_theft_auto_v.png", time: 20214},
-    {name: "Baldur's Gate III", image: "images/baldur's_gate_iii.jpg", time: 199},
-    {name: "Minecraft", image: "images/minecraft.png", time: 399},
-    {name: "Hollow Knight", image: "images/hollow_knight.png", time: 1845},
+const games = [];
+
+data.forEach((game) => {
+    games.push({name: game.name, image: game.image, time: game.time, category: game.category})
+});
+console.log(games[7].name);
+
+const gamesOld = [{name: data[0].name, image: data[0].image, time: data[0].time, category: data[0].category}, 
+    {name: "Dark Souls III", image: "images/dark_souls_iii.png", time: 1482, category: data[0].category},
+    {name: "Borderlands 2", image: "images/borderlands_2.png", time: 6569, category: data[0].category},
+    {name: "Grand Theft Auto V", image: "images/grand_theft_auto_v.png", time: 20214, category: data[0].category},
+    {name: "Baldur's Gate III", image: "images/baldur's_gate_iii.jpg", time: 199, category: data[0].category},
+    {name: "Minecraft", image: "images/minecraft.png", time: 399, category: data[0].category},
+    {name: "Hollow Knight", image: "images/hollow_knight.png", time: 1845, category: data[0].category},
 ];
 
 var waitingForNext = false;
@@ -20,7 +27,6 @@ var currentGameTimes;
 
 // Initial shuffle and hide next button
 changeGames();
-toggleTimeVisibility();
 
 var leftGame = games[leftGameIndex];
 var rightGame = games[rightGameIndex];
@@ -82,10 +88,10 @@ function toggleTimeVisibility() {
 }
 
 function changeGames() {
-    leftGameIndex = Math.floor(Math.random() * 6);
+    leftGameIndex = Math.floor(Math.random() * games.length);
 
     do {
-    rightGameIndex = Math.floor(Math.random() * 6);
+    rightGameIndex = Math.floor(Math.random() * games.length);
     } while (rightGameIndex == leftGameIndex);
 
     leftGame = games[leftGameIndex];
@@ -97,10 +103,12 @@ function changeGames() {
 function updateCards(leftGame, rightGame) {
     document.getElementById("left-button-image").src = leftGame.image;
     document.getElementById("left-button-text").innerText = leftGame.name;
+    document.getElementById("left-game-category").innerText = leftGame.category;
     document.getElementById("left-game-time").innerText = formatTime(leftGame.time);
 
     document.getElementById("right-button-image").src = rightGame.image;
     document.getElementById("right-button-text").innerText = rightGame.name;
+    document.getElementById("right-game-category").innerText = rightGame.category;
     document.getElementById("right-game-time").innerText = formatTime(rightGame.time);
 }
 

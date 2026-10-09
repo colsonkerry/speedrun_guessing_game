@@ -1,8 +1,56 @@
 [
   {
-    "name": "Elden Ring",
-    "image": "a",
-    "time": 3105,
-    "category": "Any% Glitchless"
+    "name": "Grand Theft Auto V",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co2lbd.jpg",
+    "time": 20214,
+    "category": "Any% Classic"
+  },
+  {
+    "name": "The Witcher 3: Wild Hunt",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/coaarl.jpg",
+    "time": 5957,
+    "category": "Any% Old Patch"
+  },
+  {
+    "name": "Portal 2",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1rs4.jpg",
+    "time": 3294.117,
+    "category": "Single Player No SLA"
+  },
+  {
+    "name": "The Elder Scrolls V: Skyrim",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/cocs1l.jpg",
+    "time": 1195.396,
+    "category": "Main Quest PC"
+  },
+  {
+    "name": "Grand Theft Auto: San Andreas",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co2lb9.jpg",
+    "time": 10256,
+    "category": "Any% (No AJS) With 3rd-party caps"
+  },
+  {
+    "name": "Portal",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/coay61.jpg",
+    "time": 305.955,
+    "category": "Out of Bounds PC"
+  },
+  {
+    "name": "Red Dead Redemption 2",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1q1f.jpg",
+    "time": 44786,
+    "category": "Any% No Checkpoint Skips"
+  },
+  {
+    "name": "The Last of Us",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1r7f.jpg",
+    "time": 7978,
+    "category": "Any% New Game Plus"
+  },
+  {
+    "name": "Half-Life 2",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1nmw.jpg",
+    "time": 2190.285,
+    "category": "New Engine Any% No Voidclip"
   }
 ]

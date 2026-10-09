@@ -3,54 +3,330 @@
     "name": "Grand Theft Auto V",
     "image": "https://images.igdb.com/igdb/image/upload/t_4k/co2lbd.jpg",
     "time": 20214,
-    "category": "Any% Classic"
+    "category": "Any% (Classic, No)"
   },
   {
     "name": "The Witcher 3: Wild Hunt",
     "image": "https://images.igdb.com/igdb/image/upload/t_4k/coaarl.jpg",
     "time": 5957,
-    "category": "Any% Old Patch"
+    "category": "Any% (Old Patch)"
   },
   {
     "name": "Portal 2",
     "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1rs4.jpg",
     "time": 3294.117,
-    "category": "Single Player No SLA"
+    "category": "Single Player (No SLA)"
   },
   {
     "name": "The Elder Scrolls V: Skyrim",
     "image": "https://images.igdb.com/igdb/image/upload/t_4k/cocs1l.jpg",
     "time": 1195.396,
-    "category": "Main Quest PC"
+    "category": "Main Quest (PC)"
   },
   {
     "name": "Grand Theft Auto: San Andreas",
     "image": "https://images.igdb.com/igdb/image/upload/t_4k/co2lb9.jpg",
     "time": 10256,
-    "category": "Any% (No AJS) With 3rd-party caps"
+    "category": "Any% (No AJS) (With 3rd-party caps)"
   },
   {
     "name": "Portal",
     "image": "https://images.igdb.com/igdb/image/upload/t_4k/coay61.jpg",
     "time": 305.955,
-    "category": "Out of Bounds PC"
+    "category": "Out of Bounds (PC)"
   },
   {
     "name": "Red Dead Redemption 2",
     "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1q1f.jpg",
     "time": 44786,
-    "category": "Any% No Checkpoint Skips"
+    "category": "Any% (No Checkpoint Skips)"
   },
   {
     "name": "The Last of Us",
     "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1r7f.jpg",
-    "time": 7978,
-    "category": "Any% New Game Plus"
+    "time": 7953,
+    "category": "Any% (New Game Plus)"
   },
   {
     "name": "Half-Life 2",
     "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1nmw.jpg",
     "time": 2190.285,
-    "category": "New Engine Any% No Voidclip"
+    "category": "New Engine (Any% No Voidclip)"
+  },
+  {
+    "name": "BioShock",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co2mli.jpg",
+    "time": 1345,
+    "category": "Any% (PC)"
+  },
+  {
+    "name": "Grand Theft Auto: Vice City",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co2lbb.jpg",
+    "time": 467.233,
+    "category": "Any%"
+  },
+  {
+    "name": "The Legend of Zelda: Breath of the Wild",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co3p2d.jpg",
+    "time": 1363,
+    "category": "Any% (Normal Mode, 1.0 - 1.7)"
+  },
+  {
+    "name": "Half-Life",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/coc2ea.jpg",
+    "time": 1494.539,
+    "category": "WON (Scriptless, RTA)"
+  },
+  {
+    "name": "Mass Effect 2",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co20ac.jpg",
+    "time": 3395,
+    "category": "Any% (NG+) (With DLC)"
+  },
+  {
+    "name": "Batman: Arkham City",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1voh.jpg",
+    "time": 3160,
+    "category": "Any% (PC, Easy)"
+  },
+  {
+    "name": "BioShock Infinite",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co2n12.jpg",
+    "time": 5380,
+    "category": "Any% (HRH Mod)"
+  },
+  {
+    "name": "Uncharted 4: A Thief's End",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1r7h.jpg",
+    "time": 12089,
+    "category": "Any% (30 FPS)"
+  },
+  {
+    "name": "Batman: Arkham Asylum",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1voj.jpg",
+    "time": 3827,
+    "category": "Any% (PC, Easy)"
+  },
+  {
+    "name": "Red Dead Redemption",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co2lcv.jpg",
+    "time": 15132,
+    "category": "Any%"
+  },
+  {
+    "name": "Mass Effect",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1x7o.jpg",
+    "time": 4942,
+    "category": "Any% (No Mako Glitch)"
+  },
+  {
+    "name": "Horizon Zero Dawn",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co2una.jpg",
+    "time": 5621,
+    "category": "NG+ (PlayStation, Story)"
+  },
+  {
+    "name": "Fallout: New Vegas",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1u60.jpg",
+    "time": 457,
+    "category": "Any% (Yes Man)"
+  },
+  {
+    "name": "Tomb Raider",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1rbu.jpg",
+    "time": 3278,
+    "category": "Any% (PC, Glitches)"
+  },
+  {
+    "name": "Elden Ring",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co4jni.jpg",
+    "time": 3105,
+    "category": "Any% (Glitchless)"
+  },
+  {
+    "name": "Hollow Knight",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/cobfzp.jpg",
+    "time": 1845,
+    "category": "Any% (No Major Glitches)"
+  },
+  {
+    "name": "Far Cry 3",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1vpd.jpg",
+    "time": 12832,
+    "category": "Any% (Adventurer, Original)"
+  },
+  {
+    "name": "Uncharted 2: Among Thieves",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1tnb.jpg",
+    "time": 3496,
+    "category": "Any%"
+  },
+  {
+    "name": "Marvel's Spider-Man",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1r77.jpg",
+    "time": 10645,
+    "category": "Any% (PS5, Any Difficulty)"
+  },
+  {
+    "name": "The Legend of Zelda: Ocarina of Time",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co3nnx.jpg",
+    "time": 227.9,
+    "category": "Any%"
+  },
+  {
+    "name": "Minecraft: Java Edition",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/coa77e.jpg",
+    "time": 399.813,
+    "category": "Any% Glitchless (Random Seed, 1.16-1.19)"
+  },
+  {
+    "name": "Super Mario 64",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co721v.jpg",
+    "time": 5714,
+    "category": "120 Star (N64)"
+  },
+  {
+    "name": "Super Mario World",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co8lo8.jpg",
+    "time": 4839.65,
+    "category": "96 Exit"
+  },
+  {
+    "name": "Dark Souls III",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/cob9ed.jpg",
+    "time": 1482,
+    "category": "Any%"
+  },
+  {
+    "name": "Dishonored",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/coabgu.jpg",
+    "time": 1793.28,
+    "category": "Dishonored (Any%)"
+  },
+  {
+    "name": "Grand Theft Auto IV",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co2lbv.jpg",
+    "time": 11991,
+    "category": "Any% (PC)"
+  },
+  {
+    "name": "Undertale",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/cob1t2.jpg",
+    "time": 3038.9,
+    "category": "Neutral (Glitched, Fresh Save, 1.00-1.001)"
+  },
+  {
+    "name": "Life Is Strange",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1r8e.jpg",
+    "time": 17944,
+    "category": "Any% (Original)"
+  },
+  {
+    "name": "Super Mario Odyssey",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1mxf.jpg",
+    "time": 3313,
+    "category": "Any% (1P)"
+  },
+  {
+    "name": "Bloodborne",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/cob99l.jpg",
+    "time": 1129,
+    "category": "Any%"
+  },
+  {
+    "name": "Borderlands 2",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co9ba3.jpg",
+    "time": 6569,
+    "category": "Any% w/DLC (Gaige)"
+  },
+  {
+    "name": "Mass Effect 3",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1x7q.jpg",
+    "time": 9199,
+    "category": "Any% (NG+, Narrative)"
+  },
+  {
+    "name": "Call of Duty 4: Modern Warfare",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1wko.jpg",
+    "time": 5496,
+    "category": "Recruit"
+  },
+  {
+    "name": "Stardew Valley",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/coa93h.jpg",
+    "time": 7170.84,
+    "category": "Restoration (Community Center, Singleplayer, Glitchless)"
+  },
+  {
+    "name": "The Last of Us Part II",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co5ziw.jpg",
+    "time": 14053,
+    "category": "Any% (Main Game, New Game)"
+  },
+  {
+    "name": "Max Payne",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co3wb2.jpg",
+    "time": 2273.97,
+    "category": "Any% (Fugitive, PC)"
+  },
+  {
+    "name": "Assassin's Creed",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1rrw.jpg",
+    "time": 12616,
+    "category": "Any% (PC)"
+  },
+  {
+    "name": "Fallout 3",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1ycw.jpg",
+    "time": 830,
+    "category": "Any%"
+  },
+  {
+    "name": "Hades",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/cob9kr.jpg",
+    "time": 304,
+    "category": "Any Heat (Unseeded, v1.37+, Unmodded)"
+  },
+  {
+    "name": "Fallout 4",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1yc6.jpg",
+    "time": 1843.08,
+    "category": "Any% (Full-game)"
+  },
+  {
+    "name": "The Walking Dead",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co2j1g.jpg",
+    "time": 22847.04,
+    "category": "Any% (The Telltale Definitive Series)"
+  },
+  {
+    "name": "Dragon Age: Origins",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co2mvs.jpg",
+    "time": 1360,
+    "category": "Any%"
+  },
+  {
+    "name": "Super Mario Bros. 3",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co7ozx.jpg",
+    "time": 4163,
+    "category": "100%"
+  },
+  {
+    "name": "Dark Souls",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1x78.jpg",
+    "time": 1154,
+    "category": "Any%"
+  },
+  {
+    "name": "The Legend of Zelda: A Link to the Past",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co3vzn.jpg",
+    "time": 4973,
+    "category": "No Major Glitches (Any%)"
+  },
+  {
+    "name": "Metal Gear Solid",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/cobpak.jpg",
+    "time": 1973,
+    "category": "Any% (PC (2000), Easy, Standard)"
   }
 ]

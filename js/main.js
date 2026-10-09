@@ -9,21 +9,13 @@ const games = [];
 data.forEach((game) => {
     games.push({name: game.name, image: game.image, time: game.time, category: game.category})
 });
-console.log(games[7].name);
-
-const gamesOld = [{name: data[0].name, image: data[0].image, time: data[0].time, category: data[0].category}, 
-    {name: "Dark Souls III", image: "images/dark_souls_iii.png", time: 1482, category: data[0].category},
-    {name: "Borderlands 2", image: "images/borderlands_2.png", time: 6569, category: data[0].category},
-    {name: "Grand Theft Auto V", image: "images/grand_theft_auto_v.png", time: 20214, category: data[0].category},
-    {name: "Baldur's Gate III", image: "images/baldur's_gate_iii.jpg", time: 199, category: data[0].category},
-    {name: "Minecraft", image: "images/minecraft.png", time: 399, category: data[0].category},
-    {name: "Hollow Knight", image: "images/hollow_knight.png", time: 1845, category: data[0].category},
-];
 
 var waitingForNext = false;
 var leftGameIndex;
 var rightGameIndex;
 var currentGameTimes;
+var previousLeftGameIndex;
+var previousRightGameIndex;
 
 // Initial shuffle and hide next button
 changeGames();
@@ -88,14 +80,17 @@ function toggleTimeVisibility() {
 }
 
 function changeGames() {
-    leftGameIndex = Math.floor(Math.random() * games.length);
-
+    do {
+        leftGameIndex = Math.floor(Math.random() * games.length);
+    } while (leftGameIndex == previousLeftGameIndex || leftGameIndex == previousRightGameIndex)
     do {
     rightGameIndex = Math.floor(Math.random() * games.length);
-    } while (rightGameIndex == leftGameIndex);
+    } while (rightGameIndex == leftGameIndex || rightGameIndex == previousRightGameIndex || rightGameIndex == previousLeftGameIndex);
 
     leftGame = games[leftGameIndex];
+    previousLeftGameIndex = leftGameIndex;
     rightGame = games[rightGameIndex];
+    previousRightGameIndex = rightGameIndex;
 
     updateCards(leftGame, rightGame);
 };

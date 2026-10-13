@@ -97,12 +97,19 @@ let newGames = 0;
 for (const game of igdbGames) {
     // Speedrun.com API
 
+    if (newGames >= MAX_NEW_PER_RUN) {
+        break;
+    }
+
+    // Convert game name to a standardized form (lowercase, "and" and not &, stripped accent marks, delete spaces/colons/hyphens/apostrophes)
+    const igdbGameName = standardizeName(game.name);
+
     // Check if game should be skipped
     if (skippedGames.some(gameEntry => gameEntry === game.name)) {
         console.log("Already skipping game:", game.name);
         continue;
     }
-    if (games.some(gameEntry => gameEntry.name === game.name)) {
+    if (games.some(gameEntry => gameEntry.igdbId === game.id)) {
         console.log("Already have game:", game.name);
         continue;
     }
@@ -110,9 +117,6 @@ for (const game of igdbGames) {
         console.log("game.cover.image.id is empty, skipping:", game.name);
         skippedGames.push(game.name);
         continue;
-    }
-    if (newGames >= MAX_NEW_PER_RUN) {
-        break;
     }
 
     // Initial Speedrun.com fetch
@@ -129,9 +133,9 @@ for (const game of igdbGames) {
     newGames++;
 
     // Take that data and find() the entry whose name matches exactly
-    const srGame = srData.data.find(gameEntry => gameEntry.names.international === game.name);
+    const srGame = srData.data.find(gameEntry => standardizeName(gameEntry.names.international) === igdbGameName);
     if (srGame === undefined) {
-        console.log("Undefined game, skipping: " + game.name);
+        console.log("Undefined game, skipping: " + game.name + " " + game.id);
         skippedGames.push(game.name);
         continue;
     }
@@ -142,7 +146,7 @@ for (const game of igdbGames) {
     // the entire game and isn't miscellaneous (hopefully the most popular entry)
     const srCategory = srGame.categories.data.find(category => category.type === 'per-game' && !category.miscellaneous);
     if (srCategory === undefined) {
-        console.log("Undefined category, skipping: " + game.name);
+        console.log("Undefined category, skipping: " + game.name + " " + gameId);
         skippedGames.push(game.name);
         continue;
     }
@@ -157,19 +161,20 @@ for (const game of igdbGames) {
     // Join the variables together to build a URL to query to Speedrun.com for our desired game, category, and placement (the world-record) 
     const srUrlFilters = srFilteredSubcategory.map(subcat => `var-${subcat.id}=${subcat.values.default}`);
     const srQueryString = "top=1&" + srUrlFilters.join("&");
+    console.log(`${SR_BASE_URL}/leaderboards/${gameId}/category/${categoryId}?${srQueryString}`);
 
     // Call the Speedrun.com API for the leaderboard entry of our desired game, category, and placement (first)
     const srBoardResponse = await fetchWithRetry(
         `${SR_BASE_URL}/leaderboards/${gameId}/category/${categoryId}?${srQueryString}`
     );
     if (srBoardResponse === null || !srBoardResponse.ok) {
-        console.log("Speedrun.com leaderboard request failed");
+        console.log("Speedrun.com leaderboard request failed: [" + game.name, gameId + "]");
         continue;
     }
     const srBoard = await srBoardResponse.json();
 
     if (srBoard.data.runs.length === 0) {
-        console.log("srBoard.data.runs is empty, skipping:", game.name);
+        console.log("srBoard.data.runs is empty, skipping:", game.name, gameId);
         skippedGames.push(game.name);
         continue;
     }
@@ -183,7 +188,9 @@ for (const game of igdbGames) {
         name: srGame.names.international,
         image: `https://images.igdb.com/igdb/image/upload/t_4k/${game.cover.image_id}.jpg`,
         time: srBoard.data.runs[0].run.times.primary_t,
-        category: srCategoryLabel
+        category: srCategoryLabel,
+        srId: gameId,
+        igdbId: game.id
     }
     games.push(gameObj);
     fs.writeFileSync("../data/games.json", JSON.stringify(games, null, 2));
@@ -191,6 +198,11 @@ for (const game of igdbGames) {
 };
 
 fs.writeFileSync("../data/games.json", JSON.stringify(games, null, 2));
+
+// Convert game name to a standardized form (lowercase, "and" and not &, stripped accent marks, delete spaces/colons/hyphens/apostrophes)
+function standardizeName(gameName) {
+    return (gameName.toLowerCase()).replaceAll("&", "and").normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[ :'-]/g, "")
+}
 
 // console.log(srFilteredSubcategory[0].values.values[srFilteredSubcategory[0].values.default].label);
 // console.log(srGame.names.international + " | " + srCategory.name + " | " + srCategory.id);

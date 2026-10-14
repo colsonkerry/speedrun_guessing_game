@@ -37,20 +37,25 @@ nextButton.addEventListener("click", function() {
     toggleTimeVisibility();
     changeGames();
     document.getElementById("correct-or-incorrect").innerText = ""
+    document.getElementById("correct-or-incorrect").className = '';
 });
 
 function checkAnswer(button) {
     if (button == leftButton) {
         if (leftGame.time < rightGame.time) {
             document.getElementById("correct-or-incorrect").innerText = "Correct!"
+            document.getElementById("correct-or-incorrect").classList.add("correct")
         } else {
             document.getElementById("correct-or-incorrect").innerText = "Incorrect!"
+            document.getElementById("correct-or-incorrect").classList.add("incorrect")
         }
     } else {
         if (leftGame.time > rightGame.time) {
             document.getElementById("correct-or-incorrect").innerText = "Correct!"
+            document.getElementById("correct-or-incorrect").classList.add("correct")
         } else {
             document.getElementById("correct-or-incorrect").innerText = "Incorrect!"
+            document.getElementById("correct-or-incorrect").classList.add("incorrect")
         }
     }
     toggleNextVisibility();

@@ -1,138 +1,172 @@
 [
   {
+    "name": "Hollow Knight: Silksong",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/cobebu.jpg",
+    "time": 2884,
+    "formattedTime": "00:48:04",
+    "category": "Any% (No Major Glitches, Cloakless)",
+    "srId": "y65r7g81",
+    "igdbId": 115289,
+    "srLink": "https://www.speedrun.com/silksong"
+  },
+  {
     "name": "Grand Theft Auto V",
     "image": "https://images.igdb.com/igdb/image/upload/t_4k/co2lbd.jpg",
     "time": 20214,
+    "formattedTime": "05:36:54",
     "category": "Any% (Classic, No)",
     "srId": "om1mx362",
-    "igdbId": 1020
+    "igdbId": 1020,
+    "srLink": "https://www.speedrun.com/gtav"
   },
   {
     "name": "The Witcher 3: Wild Hunt",
     "image": "https://images.igdb.com/igdb/image/upload/t_4k/coaarl.jpg",
     "time": 5957,
+    "formattedTime": "01:39:17",
     "category": "Any% (Old Patch)",
     "srId": "k6qre01g",
-    "igdbId": 1942
+    "igdbId": 1942,
+    "srLink": "https://www.speedrun.com/the_witcher_3_wild_hunt"
   },
   {
     "name": "Portal 2",
     "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1rs4.jpg",
     "time": 3294.117,
+    "formattedTime": "00:54:54",
     "category": "Single Player (No SLA)",
     "srId": "om1mw4d2",
-    "igdbId": 72
+    "igdbId": 72,
+    "srLink": "https://www.speedrun.com/portal_2"
   },
   {
     "name": "The Elder Scrolls V: Skyrim",
     "image": "https://images.igdb.com/igdb/image/upload/t_4k/cocs1l.jpg",
     "time": 1195.396,
+    "formattedTime": "00:19:55",
     "category": "Main Quest (PC)",
     "srId": "n4d7jzd7",
-    "igdbId": 472
+    "igdbId": 472,
+    "srLink": "https://www.speedrun.com/skyrim"
   },
   {
     "name": "Grand Theft Auto: San Andreas",
     "image": "https://images.igdb.com/igdb/image/upload/t_4k/co2lb9.jpg",
     "time": 10256,
+    "formattedTime": "02:50:56",
     "category": "Any% (No AJS) (With 3rd-party caps)",
     "srId": "yo1yv1q5",
-    "igdbId": 732
+    "igdbId": 732,
+    "srLink": "https://www.speedrun.com/gtasa"
   },
   {
     "name": "Portal",
     "image": "https://images.igdb.com/igdb/image/upload/t_4k/coay61.jpg",
     "time": 305.955,
+    "formattedTime": "00:05:05",
     "category": "Out of Bounds (PC)",
     "srId": "4pd0n31e",
-    "igdbId": 71
+    "igdbId": 71,
+    "srLink": "https://www.speedrun.com/portal"
   },
   {
     "name": "Red Dead Redemption 2",
     "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1q1f.jpg",
     "time": 44786,
+    "formattedTime": "12:26:26",
     "category": "Any% (No Checkpoint Skips)",
     "srId": "46w35xn1",
-    "igdbId": 25076
+    "igdbId": 25076,
+    "srLink": "https://www.speedrun.com/rdr2"
   },
   {
     "name": "The Last of Us",
     "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1r7f.jpg",
     "time": 7918,
+    "formattedTime": "02:11:58",
     "category": "Any% (New Game Plus)",
     "srId": "v1px2p68",
-    "igdbId": 1009
+    "igdbId": 1009,
+    "srLink": "https://www.speedrun.com/tlou"
   },
   {
     "name": "Half-Life 2",
     "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1nmw.jpg",
     "time": 2190.285,
+    "formattedTime": "00:36:30",
     "category": "New Engine (Any% No Voidclip)",
     "srId": "ok6q991g",
-    "igdbId": 233
+    "igdbId": 233,
+    "srLink": "https://www.speedrun.com/hl2"
   },
   {
     "name": "BioShock",
     "image": "https://images.igdb.com/igdb/image/upload/t_4k/co2mli.jpg",
     "time": 1345,
+    "formattedTime": "00:22:25",
     "category": "Any% (PC)",
     "srId": "v1poz768",
-    "igdbId": 20
+    "igdbId": 20,
+    "srLink": "https://www.speedrun.com/bs1"
   },
   {
     "name": "Grand Theft Auto: Vice City",
     "image": "https://images.igdb.com/igdb/image/upload/t_4k/co2lbb.jpg",
     "time": 467.233,
+    "formattedTime": "00:07:47",
     "category": "Any%",
     "srId": "29d30dlp",
-    "igdbId": 733
+    "igdbId": 733,
+    "srLink": "https://www.speedrun.com/gtavc"
   },
   {
     "name": "The Legend of Zelda: Breath of the Wild",
     "image": "https://images.igdb.com/igdb/image/upload/t_4k/co3p2d.jpg",
     "time": 1363,
+    "formattedTime": "00:22:43",
     "category": "Any% (Normal Mode, 1.0 - 1.7)",
     "srId": "76rqjqd8",
-    "igdbId": 7346
+    "igdbId": 7346,
+    "srLink": "https://www.speedrun.com/botw"
   },
   {
     "name": "Half-Life",
     "image": "https://images.igdb.com/igdb/image/upload/t_4k/coc2ea.jpg",
     "time": 1494.539,
+    "formattedTime": "00:24:54",
     "category": "WON (Scriptless, RTA)",
     "srId": "n268nk6p",
-    "igdbId": 231
+    "igdbId": 231,
+    "srLink": "https://www.speedrun.com/hl1"
   },
   {
     "name": "Mass Effect 2",
     "image": "https://images.igdb.com/igdb/image/upload/t_4k/co20ac.jpg",
     "time": 3395,
+    "formattedTime": "00:56:35",
     "category": "Any% (NG+) (With DLC)",
     "srId": "4pdvw96w",
-    "igdbId": 74
+    "igdbId": 74,
+    "srLink": "https://www.speedrun.com/me2"
   },
   {
     "name": "Batman: Arkham City",
     "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1voh.jpg",
     "time": 3160,
+    "formattedTime": "00:52:40",
     "category": "Any% (PC, Easy)",
     "srId": "x3692ldl",
-    "igdbId": 501
+    "igdbId": 501,
+    "srLink": "https://www.speedrun.com/arkhamcity"
   },
   {
-    "name": "BioShock Infinite",
-    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co2n12.jpg",
-    "time": 5380,
-    "category": "Any% (HRH Mod)",
-    "srId": "lde3yx63",
-    "igdbId": 538
-  },
-  {
-    "name": "Uncharted 4: A Thief's End",
-    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1r7h.jpg",
-    "time": 12089,
-    "category": "Any% (30 FPS)",
-    "srId": "k6qgv9dg",
-    "igdbId": 7331
+    "name": "Animal Crossing: New Horizons",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co3wls.jpg",
+    "time": 737,
+    "formattedTime": "00:12:17",
+    "category": "First Debt (Switch 2)",
+    "srId": "76rxe746",
+    "igdbId": 109462,
+    "srLink": "https://www.speedrun.com/acnh"
   }
 ]

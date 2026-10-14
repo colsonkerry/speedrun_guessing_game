@@ -39,6 +39,8 @@ async function fetchWithRetry(url, options = {}, maxAttempts = 4) {
 
 let games = [];
 let skippedGames = [];
+let gamesToAdd = [];
+let igdbGamesResponse;
 
 try {
     if (fs.existsSync("../data/games.json")) {
@@ -56,6 +58,16 @@ try {
         skippedGames = skippedGamesArray;
     } else {
         skippedGames = [];
+    } 
+} catch (error) {
+    console.error("An error occurred: ", error.message);
+}
+try {
+    if (fs.existsSync("../data/games-to-add.json")) {
+        const gamesToAddArray = JSON.parse(fs.readFileSync("../data/games-to-add.json", "utf8"));
+        gamesToAdd = gamesToAddArray;
+    } else {
+        gamesToAdd = [];
     } 
 } catch (error) {
     console.error("An error occurred: ", error.message);
@@ -78,7 +90,23 @@ if (!igdbResponse.ok) {
 const data = await igdbResponse.json();
 const token = data.access_token;
 
-const igdbGamesResponse = await fetch(
+if (gamesToAdd.length > 0) {
+    igdbGamesResponse = await fetch(
+        `https://api.igdb.com/v4/games`, {
+        method: "POST",
+        headers: {
+            "Client-ID": `${id}`,
+            "Authorization": `Bearer ${token}`
+        },
+        body: `fields name, cover.image_id; limit 3; search "${gamesToAdd[0]}";`
+    })
+    if (!igdbGamesResponse.ok) {
+    console.log("IGDB Games Request Failed For Specific Search:", igdbGamesResponse.status, await igdbGamesResponse.text());
+    process.exit(1);
+    }
+}
+else {
+    igdbGamesResponse = await fetch(
     `https://api.igdb.com/v4/games`, { 
     method: "POST",
         headers: {
@@ -86,17 +114,18 @@ const igdbGamesResponse = await fetch(
             "Authorization": `Bearer ${token}`
         },
         body: "fields name, cover.image_id; limit 100; sort total_rating_count desc;"
-})
-if (!igdbGamesResponse.ok) {
-    console.log("IGDB Games Request Failed:", igdbGamesResponse.status, await igdbGamesResponse.text());
-    process.exit(1);
+    })
+    if (!igdbGamesResponse.ok) {
+        console.log("IGDB Games Request Failed:", igdbGamesResponse.status, await igdbGamesResponse.text());
+        process.exit(1);
+    }
 }
+
 const igdbGames = await igdbGamesResponse.json();
 let newGames = 0;
 
-for (const game of igdbGames) {
-    // Speedrun.com API
 
+for (const game of igdbGames) {
     if (newGames >= MAX_NEW_PER_RUN) {
         break;
     }
@@ -118,6 +147,8 @@ for (const game of igdbGames) {
         skippedGames.push(game.name);
         continue;
     }
+
+    // ---SPEEDRUN.COM API---
 
     // Initial Speedrun.com fetch
     const srResponse = await fetchWithRetry(
@@ -188,13 +219,17 @@ for (const game of igdbGames) {
         name: srGame.names.international,
         image: `https://images.igdb.com/igdb/image/upload/t_4k/${game.cover.image_id}.jpg`,
         time: srBoard.data.runs[0].run.times.primary_t,
+        formattedTime: formatTime(srBoard.data.runs[0].run.times.primary_t),
         category: srCategoryLabel,
         srId: gameId,
-        igdbId: game.id
+        igdbId: game.id,
+        srLink: srGame.weblink
     }
     games.push(gameObj);
     fs.writeFileSync("../data/games.json", JSON.stringify(games, null, 2));
     fs.writeFileSync("../data/skipped-games.json", JSON.stringify(skippedGames, null, 2));
+    gamesToAdd.shift();
+    fs.writeFileSync('../data/games-to-add.json', JSON.stringify(gamesToAdd, null, 2));
 };
 
 fs.writeFileSync("../data/games.json", JSON.stringify(games, null, 2));
@@ -202,6 +237,18 @@ fs.writeFileSync("../data/games.json", JSON.stringify(games, null, 2));
 // Convert game name to a standardized form (lowercase, "and" and not &, stripped accent marks, delete spaces/colons/hyphens/apostrophes)
 function standardizeName(gameName) {
     return (gameName.toLowerCase()).replaceAll("&", "and").normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[ :'-]/g, "")
+}
+
+function formatTime(gameTime) {
+    const hours = Math.floor(gameTime / 3600);
+    const minutes = Math.floor((gameTime % 3600) / 60);
+    const seconds = Math.floor(gameTime % 60);
+
+    const hh = String(hours).padStart(2, '0');
+    const mm = String(minutes).padStart(2, '0');
+    const ss = String(seconds).padStart(2, '0');
+
+    return `${hh}:${mm}:${ss}`;
 }
 
 // console.log(srFilteredSubcategory[0].values.values[srFilteredSubcategory[0].values.default].label);

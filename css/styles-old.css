@@ -1,0 +1,165 @@
+:root {
+    --navy: #10122f;
+    --cream: #ffeee3;
+}
+
+body {
+    background-color: var(--cream);
+    /* background-image: radial-gradient(rgba(16, 18, 47, 0.35) 1px, transparent 1.5px); */
+    /* background-size: 24px 24px; */
+    color: var(--navy);
+}
+
+h1 {
+    font-size: 48px;
+    text-align: center;
+    color: #000000;
+}
+
+h2 {
+    font-size: 36px;
+    text-align: center;
+    color: #000000;
+    line-height: 5px;
+}
+
+h3 {
+    font-size: 30px;
+    text-align: center;
+    color: #ebebeb;
+    line-height: 3px;
+}
+
+.button-text {
+    font-size: 30px;
+    min-height: 2.4em;
+    text-wrap: balance;
+}
+
+.game-category {
+    font-size: 24px;
+    min-height: 2.6em;
+    text-wrap: balance;
+    color: #575757;
+}
+
+.cards {
+    max-width: 900px;
+    margin: 1em auto;
+    width: 100%;
+
+    display: grid;
+
+    /* If screen width is 700px or wider, show two columns. If it is smaller than 700px only show one column. */
+    @media screen and (min-width: 700px) {
+        grid-template-columns: repeat(2, minmax(0px, 1fr));
+    }
+    @media screen and (max-width: 699px) {
+        grid-template-columns: repeat(1, minmax(0px, 1fr));
+    }
+
+    grid-gap: 20px;
+}
+
+.card {
+    border: 3px solid var(--navy);
+    border-radius: 0px;
+
+    display: grid;
+    grid-template-rows: max-content auto 1fr;
+}
+
+.game-option {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+    padding: 12px 24px;
+
+    background-color: rgb(255, 255, 255);
+    border: none;
+    color: rgb(5, 5, 5);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.button-image {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: contain;
+}
+
+/* CSS */
+.button-30 {
+    align-items: center;
+    appearance: none;
+    background-color: #FCFCFD;
+    border-radius: 4px;
+    border-width: 0;
+    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #36395A;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "JetBrains Mono",monospace;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow .15s,transform .15s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow,transform;
+    font-size: 18px;
+}
+
+.button-30:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.button-30:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-30:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+
+.next {
+    text-align: center;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+/* .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+} */
+
+.option {
+    flex-shrink: 1;
+    padding: 20px;
+    background-color: rgb(117, 117, 117);
+}

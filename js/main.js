@@ -4,24 +4,40 @@ const leftButton = document.getElementById("left-button");
 const rightButton = document.getElementById("right-button");
 const nextButton = document.getElementById("next-button");
 
+const scoreSquares = document.querySelectorAll(".score-square");
+let round = 0;
+let correctCount = 0;
+
 const games = [];
+const todaysGames = [];
+
+var randIndex;
+var previousRandIndex = [];
 
 data.forEach((game) => {
     games.push({name: game.name, image: game.image, time: game.time, category: game.category})
 });
 
+for (let i = 0; i < 10 ; i++) {
+    do {
+        randIndex = Math.floor(Math.random() * games.length);
+    } while (previousRandIndex.includes(randIndex));
+    previousRandIndex.push(randIndex);
+    todaysGames.push({name: games[randIndex].name, image: games[randIndex].image, time: games[randIndex].time, category: games[randIndex].category});
+    console.log(todaysGames[i].name);
+    console.log(previousRandIndex);
+}
+
 var waitingForNext = false;
-var leftGameIndex;
-var rightGameIndex;
+var leftGameIndex = 0;
+var rightGameIndex = 1;
 var currentGameTimes;
 var previousLeftGameIndex;
 var previousRightGameIndex;
 
-// Initial shuffle and hide next button
-changeGames();
-
-var leftGame = games[leftGameIndex];
-var rightGame = games[rightGameIndex];
+var leftGame = todaysGames[leftGameIndex];
+var rightGame = todaysGames[rightGameIndex];
+updateCards(leftGame, rightGame);
 
 leftButton.addEventListener("click", function() {
     checkAnswer(leftButton);
@@ -32,30 +48,79 @@ rightButton.addEventListener("click", function() {
 });
 
 nextButton.addEventListener("click", function() {
+    if (waitingForNext == false) {
+        return;
+    }
+    document.getElementById("left-card").classList = "card";
+    document.getElementById("right-card").classList = "card";
+
     waitingForNext = false;
+
+    if (round === scoreSquares.length) {
+        scoreSquares.forEach((square) => square.classList.remove("correct", "incorrect"));
+        round = 0;
+        correctCount = 0;
+    }
+
     toggleNextVisibility();
     toggleTimeVisibility();
     changeGames();
+
     document.getElementById("correct-or-incorrect").innerText = ""
     document.getElementById("correct-or-incorrect").className = '';
+    document.getElementById("left-game-time").classList.remove("correct");
+    document.getElementById("left-game-time").classList.remove("incorrect");
+    document.getElementById("right-game-time").classList.remove("correct");
+    document.getElementById("right-game-time").classList.remove("incorrect");
 });
 
 function checkAnswer(button) {
+    if (waitingForNext == true) {
+        return;
+    }
+    const isCorrect = button == leftButton
+        ? leftGame.time < rightGame.time
+        : leftGame.time > rightGame.time;
+    
+    scoreSquares[round].classList.add(isCorrect ? "correct" : "incorrect");
+    if (isCorrect) correctCount++;
+    round++;
+
     if (button == leftButton) {
         if (leftGame.time < rightGame.time) {
+            //Left button & Correct
             document.getElementById("correct-or-incorrect").innerText = "Correct!"
             document.getElementById("correct-or-incorrect").classList.add("correct")
+            document.getElementById("left-card").classList.add("correct");
+            document.getElementById("right-card").classList.add("incorrect");
+            document.getElementById("left-game-time").classList.add("correct");
+            document.getElementById("right-game-time").classList.add("incorrect");
         } else {
+            //Left button & Incorrect
             document.getElementById("correct-or-incorrect").innerText = "Incorrect!"
             document.getElementById("correct-or-incorrect").classList.add("incorrect")
+            document.getElementById("left-card").classList.add("incorrect");
+            document.getElementById("right-card").classList.add("correct");
+            document.getElementById("left-game-time").classList.add("incorrect");
+            document.getElementById("right-game-time").classList.add("correct");
         }
     } else {
         if (leftGame.time > rightGame.time) {
+            //Right button & Correct
             document.getElementById("correct-or-incorrect").innerText = "Correct!"
             document.getElementById("correct-or-incorrect").classList.add("correct")
+            document.getElementById("right-card").classList.add("correct");
+            document.getElementById("left-card").classList.add("incorrect");
+            document.getElementById("right-game-time").classList.add("correct");
+            document.getElementById("left-game-time").classList.add("incorrect");
         } else {
+            //Right button & Incorrect
             document.getElementById("correct-or-incorrect").innerText = "Incorrect!"
             document.getElementById("correct-or-incorrect").classList.add("incorrect")
+            document.getElementById("right-card").classList.add("incorrect");
+            document.getElementById("left-card").classList.add("correct");
+            document.getElementById("right-game-time").classList.add("incorrect");
+            document.getElementById("left-game-time").classList.add("correct");
         }
     }
     toggleNextVisibility();
@@ -85,17 +150,10 @@ function toggleTimeVisibility() {
 }
 
 function changeGames() {
-    do {
-        leftGameIndex = Math.floor(Math.random() * games.length);
-    } while (leftGameIndex == previousLeftGameIndex || leftGameIndex == previousRightGameIndex)
-    do {
-    rightGameIndex = Math.floor(Math.random() * games.length);
-    } while (rightGameIndex == leftGameIndex || rightGameIndex == previousRightGameIndex || rightGameIndex == previousLeftGameIndex);
-
-    leftGame = games[leftGameIndex];
-    previousLeftGameIndex = leftGameIndex;
-    rightGame = games[rightGameIndex];
-    previousRightGameIndex = rightGameIndex;
+    leftGameIndex += 2;
+    rightGameIndex += 2;
+    leftGame = todaysGames[leftGameIndex];
+    rightGame = todaysGames[rightGameIndex];
 
     updateCards(leftGame, rightGame);
 };

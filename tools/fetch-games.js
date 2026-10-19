@@ -53,8 +53,8 @@ try {
     console.error("An error occurred: ", error.message);
 }
 try {
-    if (fs.existsSync("../data/skipped-games.json")) {
-        const skippedGamesArray = JSON.parse(fs.readFileSync("../data/skipped-games.json", "utf8"));
+    if (fs.existsSync("../tools/skipped-games.json")) {
+        const skippedGamesArray = JSON.parse(fs.readFileSync("../tools/skipped-games.json", "utf8"));
         skippedGames = skippedGamesArray;
     } else {
         skippedGames = [];
@@ -63,7 +63,7 @@ try {
     console.error("An error occurred: ", error.message);
 }
 try {
-    if (fs.existsSync("../data/games-to-add.json")) {
+    if (fs.existsSync("../tools/games-to-add.json")) {
         const gamesToAddArray = JSON.parse(fs.readFileSync("../data/games-to-add.json", "utf8"));
         gamesToAdd = gamesToAddArray;
     } else {
@@ -217,7 +217,7 @@ for (const game of igdbGames) {
     // Build a game object for this particular game and push it to the array of games
     const gameObj = {
         name: srGame.names.international,
-        image: `https://images.igdb.com/igdb/image/upload/t_4k/${game.cover.image_id}.jpg`,
+        image: `https://images.igdb.com/igdb/image/upload/cover_big/${game.cover.image_id}.jpg`,
         time: srBoard.data.runs[0].run.times.primary_t,
         formattedTime: formatTime(srBoard.data.runs[0].run.times.primary_t),
         category: srCategoryLabel,
@@ -227,9 +227,9 @@ for (const game of igdbGames) {
     }
     games.push(gameObj);
     fs.writeFileSync("../data/games.json", JSON.stringify(games, null, 2));
-    fs.writeFileSync("../data/skipped-games.json", JSON.stringify(skippedGames, null, 2));
+    fs.writeFileSync("../tools/skipped-games.json", JSON.stringify(skippedGames, null, 2));
     gamesToAdd.shift();
-    fs.writeFileSync('../data/games-to-add.json', JSON.stringify(gamesToAdd, null, 2));
+    fs.writeFileSync('../tools/games-to-add.json', JSON.stringify(gamesToAdd, null, 2));
 };
 
 fs.writeFileSync("../data/games.json", JSON.stringify(games, null, 2));

@@ -4,34 +4,20 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Page Title</title>
-        <link rel="stylesheet" href="css/styles2.css">
+        <link rel="stylesheet" href="css/styles.css">
     </head>
     
     <body>
+        
+        <header class="title-panel">
+            <h1>SpeedrunGuesser</h1>
+            <h2>Which game has the faster speedrun?</h2>
+        </header>
+        
 
-        <h1>SpeedrunGuesser</h1>
-        <h2>Which game has the faster speedrun?</h2>
-
-        <!-- <div class="container">
-            <div class="option">
-                <button class="game-option" id="left-button">
-                    <img src="images/elden_ring.png" alt="Game Selection" class="button-art">
-                    <span class="button-text">Elden Ring</span>
-                </button>
-            </div>
-            <div class="option">
-                <button class="game-option" id="right-button">
-                    <img src="images/dark_souls_iii.png" alt="Game Selection" class="button-art">
-                    <span class="button-text">Dark Souls III</span>
-                </button>
-            </div>
-        </div> -->
         <div class="container">
             <div class="cards">
-                <article class="card">
-                    <header>
-                        <!-- <h3>Game #1</h3> -->
-                    </header>
+                <article class="card" id="left-card">
                     <button class="game-option" id="left-button">
                         <img id="left-button-image" class="button-image" src="" alt="Game Selection">
                         <span id="left-button-text" class="button-text"></span>
@@ -40,10 +26,24 @@
                     </button>
                 </article>
 
-                <article class="card">
-                    <header>
-                        <!-- <h3>Game #2</h3> -->
-                    </header>
+                <div class="versus">
+                    <div class="versus-badge">VS</div>
+                    <div class="score">
+                        <span class="score-square"></span>
+                        <span class="score-square"></span>
+                        <span class="score-square"></span>
+                        <span class="score-square"></span>
+                        <span class="score-square"></span>
+                    </div>
+                    <div class="result">
+                        <h2 id="correct-or-incorrect"></h2>
+                    </div>
+                    <div class="next">
+                        <button id="next-button" class="button-30 hidden" role="button">Next</button>
+                    </div>
+                </div>
+
+                <article class="card" id="right-card">
                     <button class="game-option" id="right-button">
                         <img id="right-button-image" class="button-image" src="" alt="Game Selection">
                         <span id="right-button-text" class="button-text"></span>
@@ -53,15 +53,7 @@
                 </article>
             </div>
         </div>
-
-        <div class="result">
-            <h2 id="correct-or-incorrect"></h2>
-        </div>
-        <div class="next">
-            <button id="next-button" class="button-30 hidden" role="button">Next</button>
-        </div>
         
-
         <script type="module" src ="js/main.js"></script>
 
     </body>

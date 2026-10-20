@@ -13,7 +13,6 @@
             <h1>SpeedrunGuesser</h1>
             <h2>Which game has the faster speedrun?</h2>
         </header>
-        
 
         <div class="container">
             <div class="cards">
@@ -53,6 +52,24 @@
                 </article>
             </div>
         </div>
+
+        <dialog id="instructions-modal" class="instructions-modal">
+            <div class="instructions-content">
+                <h2>How to Play</h2>
+                <ul>
+                    <li>Two games appear side by side, each with its speedrun category.</li>
+                    <li>Click the game you think has the <strong>faster</strong> speedrun time.</li>
+                    <li>5 rounds, how many can you get right?</li>
+                </ul>
+                <button id="start-game-button" class="button-30" role="button">Let's Go!</button>
+            </div>
+        </dialog>
+
+        <dialog id="results-screen" class="results-screen">
+            <div class="results-content">
+                
+            </div>
+        </dialog>
         
         <script type="module" src ="js/main.js"></script>
 

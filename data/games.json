@@ -168,5 +168,45 @@
     "srId": "76rxe746",
     "igdbId": 109462,
     "srLink": "https://www.speedrun.com/acnh"
+  },
+  {
+    "name": "BioShock Infinite",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co2n12.jpg",
+    "time": 5380,
+    "formattedTime": "01:29:40",
+    "category": "Any% (HRH Mod)",
+    "srId": "lde3yx63",
+    "igdbId": 538,
+    "srLink": "https://www.speedrun.com/bsi"
+  },
+  {
+    "name": "Uncharted 4: A Thief's End",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1r7h.jpg",
+    "time": 12089,
+    "formattedTime": "03:21:29",
+    "category": "Any% (30 FPS)",
+    "srId": "k6qgv9dg",
+    "igdbId": 7331,
+    "srLink": "https://www.speedrun.com/uc4"
+  },
+  {
+    "name": "Batman: Arkham Asylum",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1voj.jpg",
+    "time": 3816,
+    "formattedTime": "01:03:36",
+    "category": "Any% (PC, Easy)",
+    "srId": "4pd0p06e",
+    "igdbId": 500,
+    "srLink": "https://www.speedrun.com/arkhamasylum"
+  },
+  {
+    "name": "Red Dead Redemption",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co2lcv.jpg",
+    "time": 15132,
+    "formattedTime": "04:12:12",
+    "category": "Any%",
+    "srId": "29d3ny1l",
+    "igdbId": 434,
+    "srLink": "https://www.speedrun.com/rdr"
   }
 ]

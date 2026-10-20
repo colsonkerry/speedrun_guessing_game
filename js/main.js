@@ -3,6 +3,11 @@ import data from '../data/games.json' with { type: 'json' };
 const leftButton = document.getElementById("left-button");
 const rightButton = document.getElementById("right-button");
 const nextButton = document.getElementById("next-button");
+const resultsScreen = document.getElementById("results-screen");
+const instructionsScreen = document.getElementById("instructions-modal");
+const startButton = document.getElementById("start-game-button");
+
+instructionsScreen.showModal();
 
 const scoreSquares = document.querySelectorAll(".score-square");
 let round = 0;
@@ -39,6 +44,10 @@ var leftGame = todaysGames[leftGameIndex];
 var rightGame = todaysGames[rightGameIndex];
 updateCards(leftGame, rightGame);
 
+startButton.addEventListener("click", function() {
+    instructionsScreen.close();
+});
+
 leftButton.addEventListener("click", function() {
     checkAnswer(leftButton);
 });
@@ -48,6 +57,11 @@ rightButton.addEventListener("click", function() {
 });
 
 nextButton.addEventListener("click", function() {
+    if (nextButton.innerText === "See Results!") {
+        resultsScreen.innerText = `You got ${correctCount} / 5 correct!`
+        resultsScreen.showModal();
+    }
+
     if (waitingForNext == false) {
         return;
     }
@@ -55,12 +69,6 @@ nextButton.addEventListener("click", function() {
     document.getElementById("right-card").classList = "card";
 
     waitingForNext = false;
-
-    if (round === scoreSquares.length) {
-        scoreSquares.forEach((square) => square.classList.remove("correct", "incorrect"));
-        round = 0;
-        correctCount = 0;
-    }
 
     toggleNextVisibility();
     toggleTimeVisibility();
@@ -86,6 +94,10 @@ function checkAnswer(button) {
     if (isCorrect) correctCount++;
     round++;
 
+    if (round === scoreSquares.length) {
+        nextButton.innerText = "See Results!"
+    }
+
     if (button == leftButton) {
         if (leftGame.time < rightGame.time) {
             //Left button & Correct
@@ -95,6 +107,8 @@ function checkAnswer(button) {
             document.getElementById("right-card").classList.add("incorrect");
             document.getElementById("left-game-time").classList.add("correct");
             document.getElementById("right-game-time").classList.add("incorrect");
+            document.getElementById("left-card").classList.add("selected");
+            document.getElementById("right-card").classList.add("unselected");
         } else {
             //Left button & Incorrect
             document.getElementById("correct-or-incorrect").innerText = "Incorrect!"
@@ -103,6 +117,8 @@ function checkAnswer(button) {
             document.getElementById("right-card").classList.add("correct");
             document.getElementById("left-game-time").classList.add("incorrect");
             document.getElementById("right-game-time").classList.add("correct");
+            document.getElementById("left-card").classList.add("selected");
+            document.getElementById("right-card").classList.add("unselected");
         }
     } else {
         if (leftGame.time > rightGame.time) {
@@ -113,6 +129,8 @@ function checkAnswer(button) {
             document.getElementById("left-card").classList.add("incorrect");
             document.getElementById("right-game-time").classList.add("correct");
             document.getElementById("left-game-time").classList.add("incorrect");
+            document.getElementById("right-card").classList.add("selected");
+            document.getElementById("left-card").classList.add("unselected");
         } else {
             //Right button & Incorrect
             document.getElementById("correct-or-incorrect").innerText = "Incorrect!"
@@ -121,6 +139,8 @@ function checkAnswer(button) {
             document.getElementById("left-card").classList.add("correct");
             document.getElementById("right-game-time").classList.add("incorrect");
             document.getElementById("left-game-time").classList.add("correct");
+            document.getElementById("right-card").classList.add("selected");
+            document.getElementById("left-card").classList.add("unselected");
         }
     }
     toggleNextVisibility();

@@ -80,6 +80,10 @@ h3 {
     line-height: 1.3;
 }
 
+h5 {
+    line-height: 5px;
+}
+
 /* ---------- Instructions Modal ---------- */
 
 .instructions-modal {
@@ -155,7 +159,7 @@ h3 {
     color: var(--text);
     
     /* Sizing and layout */
-    max-width: 720px;
+    max-width: 900px;
     width: 90%;
     padding: 2rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
@@ -165,6 +169,29 @@ h3 {
 .results-screen::backdrop {
     background-color: rgba(30, 31, 34, 0.8); /* matches var(--bg) with opacity */
     backdrop-filter: blur(2px);
+}
+
+.results-screen h2 {
+    font-size: clamp(32px, 3vh, 48px);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1.7;
+    color: var(--gold);
+    margin: 0;
+    text-align: center;
+}
+.results-screen h3 {
+    font-size: clamp(20, 3vh, 24px);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--text);
+    margin: 0;
+    text-align: center;
+}
+
+.results-screen strong {
+    color: var(--gold);
+    font-weight: 700;
 }
 
 .instructions-content {
@@ -275,11 +302,12 @@ h3 {
 }
 
 .score-square {
-    width: clamp(14px, min(2.6vh, 2vw), 24px);
+    width: clamp(20px, min(4vh, 3.2vw), 36px);
     aspect-ratio: 1;
     background-color: var(--surface-sunken);
     border: 1px solid var(--border);
     border-radius: 3px;
+    margin-top: 20px;
 }
 
 .score-square.correct {
@@ -463,6 +491,18 @@ body > .next {
 
 .result .incorrect {
     color: var(--bad);
+}
+
+.results-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.results-buttons button {
+    width: 100%;
+    padding: 1rem;
 }
 
 .button-30 {

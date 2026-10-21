@@ -58,7 +58,8 @@ rightButton.addEventListener("click", function() {
 
 nextButton.addEventListener("click", function() {
     if (nextButton.innerText === "See Results!") {
-        resultsScreen.innerText = `You got ${correctCount} / 5 correct!`
+        document.getElementById("results-header").innerText = `You got ${correctCount} / 5 correct!`
+        document.getElementById("results-body").innerHTML = "<br>Copy your results and <strong>share</strong> with your friends!<br><br>Come back tomorrow for a new set of games<br>or visit the <strong>archive</strong> to play more!"
         resultsScreen.showModal();
     }
 
@@ -91,10 +92,15 @@ function checkAnswer(button) {
         : leftGame.time > rightGame.time;
     
     scoreSquares[round].classList.add(isCorrect ? "correct" : "incorrect");
-    if (isCorrect) correctCount++;
+    if (isCorrect) {
+        correctCount++;
+        scoreSquares[round + 5].classList.add("correct");
+    } else {
+        scoreSquares[round + 5].classList.add("incorrect");
+    }
     round++;
 
-    if (round === scoreSquares.length) {
+    if (round === (scoreSquares.length - 5)) {
         nextButton.innerText = "See Results!"
     }
 

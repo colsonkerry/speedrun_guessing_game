@@ -64,7 +64,7 @@ try {
 }
 try {
     if (fs.existsSync("../tools/games-to-add.json")) {
-        const gamesToAddArray = JSON.parse(fs.readFileSync("../data/games-to-add.json", "utf8"));
+        const gamesToAddArray = JSON.parse(fs.readFileSync("../tools/games-to-add.json", "utf8"));
         gamesToAdd = gamesToAddArray;
     } else {
         gamesToAdd = [];
@@ -113,7 +113,7 @@ else {
             "Client-ID": `${id}`,
             "Authorization": `Bearer ${token}`
         },
-        body: "fields name, cover.image_id; limit 100; sort total_rating_count desc;"
+        body: "fields name, cover.image_id; limit 200; sort total_rating_count desc;"
     })
     if (!igdbGamesResponse.ok) {
         console.log("IGDB Games Request Failed:", igdbGamesResponse.status, await igdbGamesResponse.text());
@@ -134,7 +134,7 @@ for (const game of igdbGames) {
     const igdbGameName = standardizeName(game.name);
 
     // Check if game should be skipped
-    if (skippedGames.some(gameEntry => gameEntry === game.name)) {
+    if (skippedGames.some(skippedGameEntry => standardizeName(skippedGameEntry) === standardizeName(game.name))) {
         console.log("Already skipping game:", game.name);
         continue;
     }
@@ -166,7 +166,7 @@ for (const game of igdbGames) {
     // Take that data and find() the entry whose name matches exactly
     const srGame = srData.data.find(gameEntry => standardizeName(gameEntry.names.international) === igdbGameName);
     if (srGame === undefined) {
-        console.log("Undefined game, skipping: " + game.name + " " + game.id);
+        console.log("Undefined game, skipping: " + game.name + ", game.id: " + game.id + ", game.cover.image_id: " + game.cover.image_id);
         skippedGames.push(game.name);
         continue;
     }
@@ -217,7 +217,7 @@ for (const game of igdbGames) {
     // Build a game object for this particular game and push it to the array of games
     const gameObj = {
         name: srGame.names.international,
-        image: `https://images.igdb.com/igdb/image/upload/cover_big/${game.cover.image_id}.jpg`,
+        image: `https://images.igdb.com/igdb/image/upload/t_4k/${game.cover.image_id}.jpg`,
         time: srBoard.data.runs[0].run.times.primary_t,
         formattedTime: formatTime(srBoard.data.runs[0].run.times.primary_t),
         category: srCategoryLabel,

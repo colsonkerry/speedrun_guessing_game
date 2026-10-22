@@ -619,3 +619,255 @@ body > .next {
     position: relative; 
 }
 
+/* Paste this at the very BOTTOM of styles.css (it overrides the body padding above it) */
+ 
+/* ---------- Taskbar: icon squares on the left edge that pull out on hover ---------- */
+ 
+.taskbar {
+    position: fixed;
+    left: 0;
+    bottom: 24px;
+    z-index: 10;
+ 
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+ 
+.taskbar-item {
+    display: flex;
+    align-items: center;
+    height: 44px;
+    padding: 0;
+ 
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-left: none;
+    border-radius: 0 6px 6px 0;
+    color: var(--text);
+ 
+    font-family: var(--font-display);
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+ 
+    transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+ 
+.taskbar-icon {
+    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+    font-family: var(--font-mono);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
+}
+ 
+/* The label takes no room until the item is hovered, then grows and slides the item out */
+.taskbar-label {
+    max-width: 0;
+    padding-right: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: 0;
+ 
+    transition: max-width 0.2s ease, padding-right 0.2s ease, opacity 0.2s ease;
+}
+ 
+.taskbar-item:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+    border-color: var(--gold);
+    color: var(--gold);
+}
+ 
+.taskbar-item:focus-visible .taskbar-label {
+    max-width: 12em;
+    padding-right: 16px;
+    opacity: 1;
+}
+ 
+/* Hover only exists on devices with a mouse; touch screens just show the icon squares */
+@media (hover: hover) {
+    .taskbar-item:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+        background-color: #34363b;
+    }
+ 
+    .taskbar-item:hover .taskbar-label {
+        max-width: 12em;
+        padding-right: 16px;
+        opacity: 1;
+    }
+}
+ 
+/* Keep the game from sliding under the taskbar on windows that are not much wider than the cards */
+@media screen and (max-width: 1400px) {
+    body {
+        padding-inline: calc(2vw + 52px);
+    }
+}
+ 
+@media screen and (max-width: 699px) {
+    .taskbar-item,
+    .taskbar-icon {
+        height: 36px;
+    }
+ 
+    .taskbar-icon {
+        width: 36px;
+        font-size: 18px;
+    }
+ 
+    body {
+        padding-inline: calc(2vw + 40px);
+    }
+}
+ 
+/* ---------- Menu dialogs ---------- */
+ 
+.menu-dialog {
+    width: min(460px, 90vw);
+    padding: 0;
+ 
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-family: var(--font-display);
+}
+ 
+.menu-dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+ 
+.dialog-body {
+    padding: 24px 28px;
+    
+}
+ 
+.menu-dialog h2 {
+    margin: 0 0 12px;
+    font-size: 26px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--gold);
+}
+ 
+.menu-dialog p {
+    margin: 0 0 12px;
+    line-height: 1.5;
+}
+ 
+.dialog-note {
+    font-size: 14px;
+    color: var(--muted);
+}
+ 
+.dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+ 
+.option-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 18px;
+    cursor: pointer;
+}
+ 
+.option-row input {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--gold);
+}
+ 
+/* Applied when the "Reduce motion" option is ticked */
+html[data-reduce-motion] *,
+html[data-reduce-motion] *::before,
+html[data-reduce-motion] *::after {
+    transition: none !important;
+    animation: none !important;
+}
+ 
+/* ---------- Covers with an even border (paste at the very bottom of styles.css) ---------- */
+
+/* The card hugs its content and sits centered; it only shrinks the cover if the window is too short */
+.card {
+    align-self: center;
+    max-height: 100%;
+}
+
+/* One fixed border on all four sides. Change this single number to make it thicker or thinner. */
+.game-option {
+    --card-pad: 24px;
+    padding: var(--card-pad);
+    gap: 1vh;
+}
+
+/* A 3:4 cover that fills the card width, zoomed with cover and cropped only when the window is short */
+.button-image {
+    flex: 0 1 auto;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+/* The text and the time now sit inside the padding, so they need no side spacing of their own */
+.button-text,
+.game-category {
+    padding-inline: 0;
+}
+
+.game-time {
+    width: 100%;
+    align-self: auto;
+    margin-inline: 0;
+}
+
+/* Very short windows scroll normally, so the cover keeps its full shape */
+@media screen and (max-height: 520px) {
+    .card {
+        align-self: stretch;
+        max-height: none;
+    }
+
+    .button-image {
+        flex: 0 0 auto;
+    }
+}
+
+/* Hovering anywhere on the taskbar shows every button's text */
+@media (hover: hover) {
+    .taskbar:hover .taskbar-label {
+        max-width: 12em;
+        padding-right: 16px;
+        opacity: 1;
+    }
+}
+
+/* Same thing when any button is reached with the keyboard */
+.taskbar:has(.taskbar-item:focus-visible) .taskbar-label {
+    max-width: 12em;
+    padding-right: 16px;
+    opacity: 1;
+}
+
+.credit-footer {
+    text-align: right;
+    color: var(--muted);
+    font-size: 20px;
+}

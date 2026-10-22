@@ -84,35 +84,65 @@
             </div>
         </dialog>
 
-
-        <dialog id="feedback-screen" class="feedback-screen">
-            <div class="feedback-content">
-
-            </div>
-        </dialog>
-
-
-        <dialog id="donate-screen" class="donate-screen">
-            <div class="donate-content">
-                
-            </div>
-        </dialog>
-
-
-        <dialog id="help-screen" class="help-screen">
-            <div class="help-content">
-                
-            </div>
-        </dialog>
-
-
-        <dialog id="options-screen" class="options-screen">
-            <div class="options-content">
-                
+        <nav class="taskbar" aria-label="Site menu">
+            <!-- TODO: replace the # with your donate / support link -->
+            <a class="taskbar-item" href="https://buymeacoffee.com/colsonkerry" target="_blank" rel="noopener">
+                <span class="taskbar-icon" aria-hidden="true">$</span>
+                <span class="taskbar-label">Support</span>
+            </a>
+        
+            <a class="taskbar-item" href="https://github.com/colsonkerry/speedrun_guessing_game/issues" target="_blank" rel="noopener">
+                <span class="taskbar-icon" aria-hidden="true">!</span>
+                <span class="taskbar-label">Report a problem</span>
+            </a>
+        
+            <button class="taskbar-item" type="button" data-dialog="help-dialog" aria-haspopup="dialog">
+                <span class="taskbar-icon" aria-hidden="true">?</span>
+                <span class="taskbar-label">FAQ</span>
+            </button>
+        
+            <button class="taskbar-item" type="button" data-dialog="options-dialog" aria-haspopup="dialog">
+                <span class="taskbar-icon" aria-hidden="true">&#9881;&#xFE0E;</span>
+                <span class="taskbar-label">Options</span>
+            </button>
+        </nav>
+        
+        <dialog id="help-dialog" class="menu-dialog">
+            <div class="dialog-body">
+                <h2>How to play</h2>
+                <p>You'll see two games. Pick the one you think has the faster speedrun world record.</p>
+                <p>After you guess, both times are revealed. A run is 5 rounds, and the squares in the middle show how you did: green for correct, red for incorrect.</p>
+                <p>Each time is the current world record in that game's most popular category, which is shown under its title.</p>
+                <h2>Why are the game images getting cropped?</h2>
+                <p>Try zooming out on the page or playing on a different resolution.</p>
+                <p>If you are still having troubles, please report an issue on the Github page. Thank you!</p>
+                <h2>Credits</h2>
+                <p>Created by Colson Kerry, a sophomore CS student.</p>
+                <p class="dialog-note">Game data from IGDB and speedrun.com.</p>
+                <form method="dialog" class="dialog-actions">
+                    <button class="button-30" autofocus>Close</button>
+                </form>
             </div>
         </dialog>
         
-        <script type="module" src ="js/main.js"></script>
+        <dialog id="options-dialog" class="menu-dialog">
+            <div class="dialog-body">
+                <h2>Options</h2>
+                <label class="option-row">
+                    <input type="checkbox" id="reduce-motion">
+                    <span>Reduce motion</span>
+                </label>
+                <p class="dialog-note">Turns off the hover and button animations. Your choice is saved in this browser.</p>
+                <form method="dialog" class="dialog-actions">
+                    <button class="button-30" autofocus>Close</button>
+                </form>
+            </div>
+        </dialog>
+
+        <footer id="credit-footer" class="credit-footer">Game data from IGDB and speedrun.com</footer>
+        
+        <script type="module" src="js/main.js"></script>
+        <script type="module" src="js/taskbar.js"></script>
 
     </body>
 </html>

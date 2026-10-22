@@ -6,6 +6,7 @@ const nextButton = document.getElementById("next-button");
 const resultsScreen = document.getElementById("results-screen");
 const instructionsScreen = document.getElementById("instructions-modal");
 const startButton = document.getElementById("start-game-button");
+const shareButton = document.getElementById("share-button");
 
 instructionsScreen.showModal();
 
@@ -23,6 +24,8 @@ data.forEach((game) => {
     games.push({name: game.name, image: game.image, time: game.time, category: game.category})
 });
 
+console.log(games.length);
+
 for (let i = 0; i < 10 ; i++) {
     do {
         randIndex = Math.floor(Math.random() * games.length);
@@ -39,6 +42,7 @@ var rightGameIndex = 1;
 var currentGameTimes;
 var previousLeftGameIndex;
 var previousRightGameIndex;
+var guesses = []
 
 var leftGame = todaysGames[leftGameIndex];
 var rightGame = todaysGames[rightGameIndex];
@@ -83,6 +87,17 @@ nextButton.addEventListener("click", function() {
     document.getElementById("right-game-time").classList.remove("incorrect");
 });
 
+shareButton.addEventListener("click", function() {
+    const estDate = new Date().toLocaleDateString("en-US", {
+        timeZone: "America/New_York"
+    });
+    const resultString = guesses.map(guess => guess ? "🟩" : "🟥").join("");
+
+    const shareText = `Speedrun Guesser (${estDate})\n\n${resultString}`;
+
+    navigator.clipboard.writeText(shareText);
+})
+
 function checkAnswer(button) {
     if (waitingForNext == true) {
         return;
@@ -115,6 +130,7 @@ function checkAnswer(button) {
             document.getElementById("right-game-time").classList.add("incorrect");
             document.getElementById("left-card").classList.add("selected");
             document.getElementById("right-card").classList.add("unselected");
+            guesses.push(true);
         } else {
             //Left button & Incorrect
             document.getElementById("correct-or-incorrect").innerText = "Incorrect!"
@@ -125,6 +141,7 @@ function checkAnswer(button) {
             document.getElementById("right-game-time").classList.add("correct");
             document.getElementById("left-card").classList.add("selected");
             document.getElementById("right-card").classList.add("unselected");
+            guesses.push(false);
         }
     } else {
         if (leftGame.time > rightGame.time) {
@@ -137,6 +154,7 @@ function checkAnswer(button) {
             document.getElementById("left-game-time").classList.add("incorrect");
             document.getElementById("right-card").classList.add("selected");
             document.getElementById("left-card").classList.add("unselected");
+            guesses.push(true);
         } else {
             //Right button & Incorrect
             document.getElementById("correct-or-incorrect").innerText = "Incorrect!"
@@ -147,6 +165,7 @@ function checkAnswer(button) {
             document.getElementById("left-game-time").classList.add("correct");
             document.getElementById("right-card").classList.add("selected");
             document.getElementById("left-card").classList.add("unselected");
+            guesses.push(false);
         }
     }
     toggleNextVisibility();

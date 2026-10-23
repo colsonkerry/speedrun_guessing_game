@@ -760,36 +760,6 @@
     "srLink": "https://www.speedrun.com/mw3"
   },
   {
-    "name": "StarCraft II: Wings of Liberty",
-    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1tnn.jpg",
-    "time": 5586,
-    "formattedTime": "01:33:06",
-    "category": "Normal Any%",
-    "srId": "o6gk0512",
-    "igdbId": 239,
-    "srLink": "https://www.speedrun.com/sc2wol"
-  },
-  {
-    "name": "Heavy Rain",
-    "image": "https://images.igdb.com/igdb/image/upload/t_4k/coaajv.jpg",
-    "time": 12020,
-    "formattedTime": "03:20:20",
-    "category": "Any%",
-    "srId": "o1y0jk6q",
-    "igdbId": 493,
-    "srLink": "https://www.speedrun.com/heavyrain"
-  },
-  {
-    "name": "Persona 5",
-    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1r76.jpg",
-    "time": 54272,
-    "formattedTime": "15:04:32",
-    "category": "Hard, True Ending",
-    "srId": "9domw36p",
-    "igdbId": 9927,
-    "srLink": "https://www.speedrun.com/p5"
-  },
-  {
     "name": "Resident Evil 7: Biohazard",
     "image": "https://images.igdb.com/igdb/image/upload/t_4k/cobtwh.jpg",
     "time": 5231,
@@ -798,16 +768,6 @@
     "srId": "v1prkz68",
     "igdbId": 19562,
     "srLink": "https://www.speedrun.com/re7"
-  },
-  {
-    "name": "Assassin's Creed Origins",
-    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1rbe.jpg",
-    "time": 16252,
-    "formattedTime": "04:30:52",
-    "category": "Any% (No DLC, PC)",
-    "srId": "268e3oo6",
-    "igdbId": 28540,
-    "srLink": "https://www.speedrun.com/acorigins"
   },
   {
     "name": "BioShock 2",
@@ -820,36 +780,6 @@
     "srLink": "https://www.speedrun.com/bs2"
   },
   {
-    "name": "Hellblade: Senua's Sacrifice",
-    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co2l7l.jpg",
-    "time": 9368,
-    "formattedTime": "02:36:08",
-    "category": "Any% NMG",
-    "srId": "m1z9j0d0",
-    "igdbId": 7603,
-    "srLink": "https://www.speedrun.com/hellblade"
-  },
-  {
-    "name": "Super Smash Bros. Melee",
-    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co21yv.jpg",
-    "time": 1301.38,
-    "formattedTime": "00:21:41",
-    "category": "All Events",
-    "srId": "j1np4l6p",
-    "igdbId": 1627,
-    "srLink": "https://www.speedrun.com/ssbm"
-  },
-  {
-    "name": "Final Fantasy X",
-    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1tr1.jpg",
-    "time": 34351,
-    "formattedTime": "09:32:31",
-    "category": "PS2 (Any%)",
-    "srId": "w6j395dj",
-    "igdbId": 418,
-    "srLink": "https://www.speedrun.com/ffx"
-  },
-  {
     "name": "Dead Space 2",
     "image": "https://images.igdb.com/igdb/image/upload/t_4k/co20xq.jpg",
     "time": 3412,
@@ -858,16 +788,6 @@
     "srId": "o6gn3812",
     "igdbId": 38,
     "srLink": "https://www.speedrun.com/dsp2"
-  },
-  {
-    "name": "Dragon Age: Inquisition",
-    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co2mvy.jpg",
-    "time": 1514,
-    "formattedTime": "00:25:14",
-    "category": "Any% (Casual)",
-    "srId": "kdkv0q1m",
-    "igdbId": 1887,
-    "srLink": "https://www.speedrun.com/dainq"
   },
   {
     "name": "Super Metroid",
@@ -880,23 +800,243 @@
     "srLink": "https://www.speedrun.com/supermetroid"
   },
   {
-    "name": "Battlefield 3",
-    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1xbu.jpg",
-    "time": 7360,
-    "formattedTime": "02:02:40",
-    "category": "Any%",
-    "srId": "pd0n301e",
-    "igdbId": 343,
-    "srLink": "https://www.speedrun.com/bf3"
+    "name": "Dying Light",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co65yq.jpg",
+    "time": 4891,
+    "formattedTime": "01:21:31",
+    "category": "Main Game Any% (Fresh Start, Any%, 1p, No HSG)",
+    "srId": "j1lnx46g",
+    "igdbId": 3042,
+    "srLink": "https://www.speedrun.com/dyinglight"
   },
   {
-    "name": "Call of Duty 2",
-    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co3acf.jpg",
-    "time": 7684.939,
-    "formattedTime": "02:08:04",
+    "name": "Terraria",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/coaamg.jpg",
+    "time": 2792,
+    "formattedTime": "00:46:32",
+    "category": "Moon Lord (Random, 1.4 NMA, None)",
+    "srId": "kdk4e21m",
+    "igdbId": 1879,
+    "srLink": "https://www.speedrun.com/terraria"
+  },
+  {
+    "name": "The Legend of Zelda: The Wind Waker",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co3ohz.jpg",
+    "time": 2629,
+    "formattedTime": "00:43:49",
+    "category": "Any% (No ACE)",
+    "srId": "4d709l17",
+    "igdbId": 1033,
+    "srLink": "https://www.speedrun.com/tww"
+  },
+  {
+    "name": "Deus Ex: Human Revolution",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1rd2.jpg",
+    "time": 2248,
+    "formattedTime": "00:37:28",
     "category": "Any%",
-    "srId": "j1ne2y1p",
-    "igdbId": 622,
-    "srLink": "https://www.speedrun.com/cod2"
+    "srId": "8m1zw310",
+    "igdbId": 43,
+    "srLink": "https://www.speedrun.com/dxhr"
+  },
+  {
+    "name": "Star Wars Jedi: Fallen Order",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1rbi.jpg",
+    "time": 1375,
+    "formattedTime": "00:22:55",
+    "category": "Any% (PS5, Unrestricted)",
+    "srId": "268eml56",
+    "igdbId": 74701,
+    "srLink": "https://www.speedrun.com/jfo"
+  },
+  {
+    "name": "God of War II",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co3dik.jpg",
+    "time": 2886,
+    "formattedTime": "00:48:06",
+    "category": "Any% NG+ (PlayStation 3)",
+    "srId": "8nd2o560",
+    "igdbId": 551,
+    "srLink": "https://www.speedrun.com/gow2"
+  },
+  {
+    "name": "Metal Gear Solid 2: Sons of Liberty",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co5e1c.jpg",
+    "time": 5111,
+    "formattedTime": "01:25:11",
+    "category": "Any% (USA, Extreme)",
+    "srId": "w6jl8y5d",
+    "igdbId": 376,
+    "srLink": "https://www.speedrun.com/mgs2sol"
+  },
+  {
+    "name": "DOOM",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co5rav.jpg",
+    "time": 1003.26,
+    "formattedTime": "00:16:43",
+    "category": "Any%",
+    "srId": "j1nrmwdp",
+    "igdbId": 673,
+    "srLink": "https://www.speedrun.com/d2016"
+  },
+  {
+    "name": "The Stanley Parable",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1rc9.jpg",
+    "time": 4008,
+    "formattedTime": "01:06:48",
+    "category": "12 Endings (Saves Not Used)",
+    "srId": "9d38w01l",
+    "igdbId": 3035,
+    "srLink": "https://www.speedrun.com/tsp"
+  },
+  {
+    "name": "Clair Obscur: Expedition 33",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co9gam.jpg",
+    "time": 3751.26,
+    "formattedTime": "01:02:31",
+    "category": "Any% (PC, Restricted, Story/Expeditioner, Legacy, NG)",
+    "srId": "ldew5jnd",
+    "igdbId": 305152,
+    "srLink": "https://www.speedrun.com/coe33"
+  },
+  {
+    "name": "Call of Duty: World at War",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1wl8.jpg",
+    "time": 4473,
+    "formattedTime": "01:14:33",
+    "category": "Any% (Recruit, 1P)",
+    "srId": "lde32n63",
+    "igdbId": 625,
+    "srLink": "https://www.speedrun.com/cod5"
+  },
+  {
+    "name": "Assassin's Creed Odyssey",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co2nul.jpg",
+    "time": 10938,
+    "formattedTime": "03:02:18",
+    "category": "Any% (PC)",
+    "srId": "46w3yo71",
+    "igdbId": 103054,
+    "srLink": "https://www.speedrun.com/acodyssey"
+  },
+  {
+    "name": "Mirror's Edge",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co5gbw.jpg",
+    "time": 1530,
+    "formattedTime": "00:25:30",
+    "category": "Any%",
+    "srId": "yo1yyr1q",
+    "igdbId": 1051,
+    "srLink": "https://www.speedrun.com/me"
+  },
+  {
+    "name": "Control",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co2evj.jpg",
+    "time": 2238,
+    "formattedTime": "00:37:18",
+    "category": "Any% (Standard)",
+    "srId": "4d79qwn1",
+    "igdbId": 103329,
+    "srLink": "https://www.speedrun.com/control"
+  },
+  {
+    "name": "Final Fantasy IX",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co2unc.jpg",
+    "time": 30833,
+    "formattedTime": "08:33:53",
+    "category": "PSX Disc (Any%)",
+    "srId": "ldemon13",
+    "igdbId": 421,
+    "srLink": "https://www.speedrun.com/ff9"
+  },
+  {
+    "name": "Super Smash Bros. Ultimate",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co2255.jpg",
+    "time": 8485,
+    "formattedTime": "02:21:25",
+    "category": "World of Light (NG+ Any%, Easy, Switch)",
+    "srId": "kdkzrkxd",
+    "igdbId": 90101,
+    "srLink": "https://www.speedrun.com/ssbu"
+  },
+  {
+    "name": "Super Mario Galaxy 2",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co21tl.jpg",
+    "time": 10394,
+    "formattedTime": "02:53:14",
+    "category": "Any% (Original, 2P)",
+    "srId": "kdkzlgdm",
+    "igdbId": 1078,
+    "srLink": "https://www.speedrun.com/smg2"
+  },
+  {
+    "name": "Cuphead",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co62ao.jpg",
+    "time": 1619.56,
+    "formattedTime": "00:26:59",
+    "category": "Version 1.1+ (Any%, Regular)",
+    "srId": "w6jmm26j",
+    "igdbId": 9061,
+    "srLink": "https://www.speedrun.com/cuphead"
+  },
+  {
+    "name": "Call of Duty: Black Ops II",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1wkv.jpg",
+    "time": 8254.6,
+    "formattedTime": "02:17:34",
+    "category": "Any% (Any% NG+, Recruit)",
+    "srId": "m1mx2462",
+    "igdbId": 1122,
+    "srLink": "https://www.speedrun.com/bo2"
+  },
+  {
+    "name": "The Legend of Zelda: Tears of the Kingdom",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co5vmg.jpg",
+    "time": 2275,
+    "formattedTime": "00:37:55",
+    "category": "Any% (Glitched, pre-v1.2.1)",
+    "srId": "v1px9276",
+    "igdbId": 119388,
+    "srLink": "https://www.speedrun.com/totk"
+  },
+  {
+    "name": "Spec Ops: The Line",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co2acb.jpg",
+    "time": 4774,
+    "formattedTime": "01:19:34",
+    "category": "Any% PC (Walk on the Beach)",
+    "srId": "3dx044dy",
+    "igdbId": 1377,
+    "srLink": "https://www.speedrun.com/spec_ops_the_line"
+  },
+  {
+    "name": "Death Stranding",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/cocsvh.jpg",
+    "time": 13336,
+    "formattedTime": "03:42:16",
+    "category": "Any% (Console) (Very Easy)",
+    "srId": "k6q4ggmd",
+    "igdbId": 19564,
+    "srLink": "https://www.speedrun.com/deathstranding"
+  },
+  {
+    "name": "Battlefield 4",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co1nmf.jpg",
+    "time": 7130,
+    "formattedTime": "01:58:50",
+    "category": "Any% (Easy)",
+    "srId": "j1n4wx6p",
+    "igdbId": 1979,
+    "srLink": "https://www.speedrun.com/bf4"
+  },
+  {
+    "name": "Battlefield 1",
+    "image": "https://images.igdb.com/igdb/image/upload/t_4k/co2n9d.jpg",
+    "time": 5296,
+    "formattedTime": "01:28:16",
+    "category": "Any%",
+    "srId": "k6qlm91g",
+    "igdbId": 18320,
+    "srLink": "https://www.speedrun.com/bf1"
   }
 ]
